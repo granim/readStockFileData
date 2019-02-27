@@ -81,6 +81,10 @@ public class readStockInfo {
         }
         System.out.println(beans);
         System.out.println(beans.get(0) + " Zeroith index");
+        System.out.println(beans.get(1) + "first index");
+        System.out.println(beans.get(1).High);
+        System.out.println(beans);
+
         return beans;
     }
 
@@ -95,4 +99,8 @@ public class readStockInfo {
                 ", Adj_Close='" + Adj_Close + '\'' +
                 '}';
     }
+
+
+
+
 }

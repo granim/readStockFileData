@@ -20,10 +20,12 @@ public class Application {
 				
 		double result = minValue.calculate();
 		
-		System.out.println(result);
+		//System.out.println(result);
+		//readStockInfo readStockInfo = new readStockInfo();
+		//readStockInfo.readFile(filepath);
 
-		readStockInfo readStockInfo = new readStockInfo();
-		readStockInfo.readFile(filepath);
+		ReadFileCollectionBased readFileCollectionBased = new ReadFileCollectionBased();
+		readFileCollectionBased.readFile(filepath);
 
 		
 	}
