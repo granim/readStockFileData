@@ -6,6 +6,7 @@ import com.opencsv.bean.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class readStockInfo {
@@ -72,21 +73,39 @@ public class readStockInfo {
     }
 
     public static List readFile(String filepath) {
-        List<readStockInfo> beans = null;
+        List<readStockInfo> beans = new LinkedList<>();
         try {
             beans = new CsvToBeanBuilder(new FileReader(filepath))
                     .withType(readStockInfo.class).build().parse();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println(beans);
-        System.out.println(beans.get(0) + " Zeroith index");
-        System.out.println(beans.get(1) + "first index");
-        System.out.println(beans.get(1).High);
-        System.out.println(beans);
-
         return beans;
     }
+
+    public static Object parseBeans(List list, Integer index){
+        return list.get(index);
+    }
+
+    public static List<String> highs(List<readStockInfo> list) {
+        List<String> highs = new ArrayList<>();
+        for(readStockInfo find : list) {
+            highs.add(find.getHigh());
+        }
+       return  highs;
+    }
+
+    public static List<String> findHigh(List<String> list) {
+        List<String> returnList = new ArrayList<>();
+        for (String high : list) {
+                 if(high.contains("High")) {
+                     returnList.add(high);
+                 }
+        }
+        return returnList;
+    }
+
+
 
     @Override
     public String toString() {

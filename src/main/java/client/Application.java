@@ -4,6 +4,9 @@ import aggregators.Aggregator;
 import aggregators.MeanAggregator;
 import aggregators.MinAggregator;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Application {
 
 	public static void main(String[] args) {
@@ -20,13 +23,16 @@ public class Application {
 				
 		double result = minValue.calculate();
 		
-		//System.out.println(result);
-		//readStockInfo readStockInfo = new readStockInfo();
-		//readStockInfo.readFile(filepath);
+		System.out.println(result);
+		readStockInfo ReadStockInfo = new readStockInfo();
+		List<readStockInfo> myList = ReadStockInfo.readFile(filepath);
+	    System.out.println(ReadStockInfo.parseBeans(myList,25));
+	    System.out.println(myList.get(0).getHigh());
+	    System.out.println(ReadStockInfo.highs(myList));
 
-		ReadFileCollectionBased readFileCollectionBased = new ReadFileCollectionBased();
-		readFileCollectionBased.readFile(filepath);
-
+	//	ReadFileCollectionBased readFileCollectionBased = new ReadFileCollectionBased();
+	//	readFileCollectionBased.readFile(filepath);
+	//	System.out.println(readFileCollectionBased.getOpen());
 		
 	}
 

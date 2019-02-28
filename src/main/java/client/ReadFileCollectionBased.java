@@ -5,13 +5,14 @@ import com.opencsv.bean.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ReadFileCollectionBased {
 
-    @CsvBindAndSplitByName(elementType = String.class, collectionType = LinkedList.class )
+    @CsvBindAndSplitByName(elementType = String.class, collectionType = ArrayList.class, splitOn = ",")
     List<? extends String> Open;
 
     @CsvBindAndSplitByName(elementType = Float.class)
@@ -86,6 +87,7 @@ public class ReadFileCollectionBased {
             e.printStackTrace();
         }
         System.out.println(beans);
+        System.out.println();
         return beans;
 
     }
