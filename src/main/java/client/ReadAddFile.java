@@ -14,8 +14,8 @@ public class ReadAddFile {
 
     public static void main(String[] args) {
         String filepath = "table.csv";
-      //  readRecord(filepath);
-       // readCSVHeader(filepath);
+        //  readRecord(filepath);
+        // readCSVHeader(filepath);
     }
 
     public static void readRecord(String filePath) {
