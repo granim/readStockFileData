@@ -87,13 +87,26 @@ public class readStockInfo {
         return list.get(index);
     }
 
+    //A method that takes the list of beans and returns all the highs
     public static List<String> highs(List<readStockInfo> list) {
-        List<String> highs = new ArrayList<>();
+        List<String> listOfHighs = new ArrayList<>();
         for(readStockInfo find : list) {
-            highs.add(find.getHigh());
+            listOfHighs.add(find.getHigh());
         }
-       return  highs;
+       return  listOfHighs;
     }
+
+    public static List<String> lows(List<readStockInfo> list) {
+        List<String> listOfLows = new ArrayList<>();
+        for(readStockInfo find : list) {
+            listOfLows.add(find.getLow());
+        }
+        return  listOfLows;
+    }
+
+
+
+
 
     public static List<String> findHigh(List<String> list) {
         List<String> returnList = new ArrayList<>();
@@ -104,7 +117,6 @@ public class readStockInfo {
         }
         return returnList;
     }
-
 
 
     @Override
